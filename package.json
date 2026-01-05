@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --no-color 2>output.txt",
-    "start": "webpack-dev-server --mode development --watch --open --hot",
-    "build": "webpack --mode production"
-  },
+  "start": "webpack serve --mode development",
+  "build": "webpack --mode production"
+}
+
   "keywords": [],
   "author": "",
   "license": "ISC",
