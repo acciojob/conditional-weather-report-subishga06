@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from "react";
-import WeatherDisplay from "./WeatherDisplay";
 
 function App() {
-  // Hardcoded weather data using useState
+  // Static weather data
   const [weather, setWeather] = useState({
     temperature: 25,
     conditions: "Sunny"
   });
 
-  // useEffect included as per requirement (even though data is static)
+  // useEffect included as required
   useEffect(() => {
-    // No API call required
+    // No API calls needed
   }, []);
+
+  // Conditional inline style
+  const temperatureStyle = {
+    color: weather.temperature > 20 ? "red" : "blue"
+  };
 
   return (
     <div>
-      <WeatherDisplay weather={weather} />
+      <p>
+        Temperature: <span style={temperatureStyle}>{weather.temperature}</span>
+      </p>
+      <p>
+        Conditions: {weather.conditions}
+      </p>
     </div>
   );
 }
