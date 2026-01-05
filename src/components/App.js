@@ -1,13 +1,23 @@
+import React, { useState, useEffect } from "react";
+import WeatherDisplay from "./WeatherDisplay";
 
-import React from "react";
-import './../styles/App.css';
+function App() {
+  // Hardcoded weather data using useState
+  const [weather, setWeather] = useState({
+    temperature: 25,
+    conditions: "Sunny"
+  });
 
-const App = () => {
+  // useEffect included as per requirement (even though data is static)
+  useEffect(() => {
+    // No API call required
+  }, []);
+
   return (
     <div>
-        {/* Do not remove the main div */}
+      <WeatherDisplay weather={weather} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
